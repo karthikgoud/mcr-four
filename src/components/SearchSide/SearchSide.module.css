@@ -1,0 +1,15 @@
+.searchSideCont {
+  /* background-color: lawngreen; */
+  width: 100%;
+  padding: 1rem;
+}
+.searchSideCont h2 {
+  margin-bottom: 1rem;
+}
+
+.searchSideCont select {
+  padding: 0.5rem 1.5rem;
+  border: none;
+  font-size: 1.1rem;
+  background-color: #e7e7e6;
+}
