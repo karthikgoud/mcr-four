@@ -61,7 +61,23 @@ const PostCard = ({ singlePost }) => {
           </NavLink>
 
           <BsShare size={18} />
-          <BsBookmark size={18} />
+
+          {isBookmarked ? (
+            <BsBookmark
+              color="red"
+              size={18}
+              onClick={() =>
+                dispatch({ type: "bookmark", payload: singlePost })
+              }
+            />
+          ) : (
+            <BsBookmark
+              size={18}
+              onClick={() =>
+                dispatch({ type: "bookmark", payload: singlePost })
+              }
+            />
+          )}
         </div>
       </div>
     </div>

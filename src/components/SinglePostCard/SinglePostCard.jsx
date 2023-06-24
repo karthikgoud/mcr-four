@@ -20,6 +20,7 @@ const SinglePostCard = ({ onePost }) => {
     createdAt,
     isBookmarked,
     postId,
+    comments,
   } = onePost;
 
   const voteCount = upvotes - downvotes;
@@ -57,7 +58,21 @@ const SinglePostCard = ({ onePost }) => {
         </div>
       </div>
       <div>
-        <h2>comments</h2>
+        {comments.map((comment) => {
+          return (
+            <div className={styles.comment}>
+              <p>{comment.username}</p>
+              <p>Replaying to @{username}</p>
+              <p>{comment.comment}</p>
+              <div className={styles.iconsCont}>
+                <BiComment size={18} />
+
+                <BsShare size={18} />
+                <BsBookmark size={18} />
+              </div>
+            </div>
+          );
+        })}
       </div>
     </div>
   );
