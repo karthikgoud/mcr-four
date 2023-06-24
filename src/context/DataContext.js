@@ -41,6 +41,21 @@ const reducer = (state, action) => {
         forumData: { ...state.forumData, posts: updatedDownPost },
       };
 
+    case "bookmark":
+      const updateMark = state?.forumData?.posts.map((post) =>
+        post?.postId === action?.payload?.postId
+          ? {
+              ...post,
+              isBookmarked: !post.isBookmarked,
+            }
+          : post
+      );
+
+      return {
+        ...state,
+        forumData: { ...state.forumData, posts: updateMark },
+      };
+
     default:
       return state;
   }
